@@ -1,4 +1,4 @@
-# OCR-RenAIssance
+ OCR-RenAIssance
 
 An OCR pipeline project for extracting main text from Renaissance-era scanned documents while ignoring embellishments. This project leverages EasyOCR (based on a CRNN architecture) to convert PDF pages to images and extract text efficiently.
 
@@ -30,57 +30,47 @@ The **OCR-RenAIssance** project focuses on developing an Optical Character Recog
    ```sh
    git clone https://github.com/icvasu/OCR-RenAIssance.git
    cd OCR-RenAIssance
-Create a Virtual Environment (Optional but Recommended):
 
-sh
-Copy
-Edit
+2.Create a Virtual Environment
+   ```sh
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
-Install Dependencies:
 
-sh
-Copy
-Edit
+```
+3.Install Dependencies:
+```sh
 pip install -r requirements.txt
-Install Poppler:
+```
+4.Install Poppler:
 
 Windows Users:
 Download Poppler from Poppler for Windows, extract it (e.g., to C:\poppler\), and add C:\poppler\Library\bin to your system PATH.
 
 Mac/Linux Users:
 Install via Homebrew (brew install poppler) or your package manager.
-
 Usage
-Prepare Your PDF:
+1.Prepare Your PDF:
 
 Place your Renaissance PDF in the project folder.
 
 Update the pdf_path variable in main.py with the correct path.
 
-Run the OCR Script:
+2.Run the OCR Script:
 
-sh
-Copy
-Edit
+```sh
+
 python main.py
-Check the Output:
+```
+
+3.Check the Output:
 
 The OCR results will be saved in ocr_output.txt inside the repository.
 
 Outputs are also organized in the outputs/ folder.
 
 Output
-The ocr_output.txt file includes the extracted text from each page, clearly separated by page numbers. For example:
+The ocr_output.txt file includes the extracted text from each page, clearly separated by page numbers.
 
-pgsql
-Copy
-Edit
---- Page 1 ---
-Extracted text from page 1...
-
---- Page 2 ---
-Extracted text from page 2...
 
 Evaluation Metrics
 To assess the performance of the OCR model, the following metrics are used:
@@ -91,28 +81,3 @@ Word Error Rate (WER): Measures the accuracy at the word level.
 
 These metrics help in fine-tuning the OCR pipeline and ensuring reliable performance.
 
-Contributing
-Contributions are welcome! Please follow these steps:
-
-Fork the repository.
-
-Create a new branch for your feature or bug fix.
-
-Commit your changes with descriptive messages.
-
-Submit a pull request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-yaml
-Copy
-Edit
-
----
-
-## 3. Final Touches
-
-- **Add a `requirements.txt`:**  
-  List all your dependencies:
-easyocr pdf2image opencv-python-headless pillow jiwer # if using for evaluation
