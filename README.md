@@ -30,3 +30,89 @@ The **OCR-RenAIssance** project focuses on developing an Optical Character Recog
    ```sh
    git clone https://github.com/icvasu/OCR-RenAIssance.git
    cd OCR-RenAIssance
+Create a Virtual Environment (Optional but Recommended):
+
+sh
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+Install Dependencies:
+
+sh
+Copy
+Edit
+pip install -r requirements.txt
+Install Poppler:
+
+Windows Users:
+Download Poppler from Poppler for Windows, extract it (e.g., to C:\poppler\), and add C:\poppler\Library\bin to your system PATH.
+
+Mac/Linux Users:
+Install via Homebrew (brew install poppler) or your package manager.
+
+Usage
+Prepare Your PDF:
+
+Place your Renaissance PDF in the project folder.
+
+Update the pdf_path variable in main.py with the correct path.
+
+Run the OCR Script:
+
+sh
+Copy
+Edit
+python main.py
+Check the Output:
+
+The OCR results will be saved in ocr_output.txt inside the repository.
+
+Outputs are also organized in the outputs/ folder.
+
+Output
+The ocr_output.txt file includes the extracted text from each page, clearly separated by page numbers. For example:
+
+pgsql
+Copy
+Edit
+--- Page 1 ---
+Extracted text from page 1...
+
+--- Page 2 ---
+Extracted text from page 2...
+
+Evaluation Metrics
+To assess the performance of the OCR model, the following metrics are used:
+
+Character Error Rate (CER): Measures the accuracy at the character level.
+
+Word Error Rate (WER): Measures the accuracy at the word level.
+
+These metrics help in fine-tuning the OCR pipeline and ensuring reliable performance.
+
+Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+
+Create a new branch for your feature or bug fix.
+
+Commit your changes with descriptive messages.
+
+Submit a pull request.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+yaml
+Copy
+Edit
+
+---
+
+## 3. Final Touches
+
+- **Add a `requirements.txt`:**  
+  List all your dependencies:
+easyocr pdf2image opencv-python-headless pillow jiwer # if using for evaluation
